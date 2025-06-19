@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="custom-search-bar">
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      (input)="filterProducts()"
+      placeholder="Digite o nome do produto"
+      autocomplete="off"
+    />
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      fill="#2979ff"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M10 2a8 8 0 015.292 13.707l4.5 4.5a1 1 0 01-1.415 1.415l-4.5-4.5A8 8 0 1110 2zm0 2a6 6 0 100 12 6 6 0 000-12z"
+      />
+    </svg>
+  </div>
+  <div class="products-list">
+    <ng-container *ngIf="filteredProducts.length === 0; else results">
+      <p>Nenhum produto encontrado.</p>
+    </ng-container>
+    <ng-template #results>
+      <p *ngIf="searchTerm">Resultados para "{{ searchTerm }}":</p>
+      <app-product-card
+        *ngFor="let product of filteredProducts"
+        [product]="product"
+      />
+    </ng-template>
+  </div>
+</div>

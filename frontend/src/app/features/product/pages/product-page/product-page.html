@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="back-button-bar">
+    <button (click)="goBack()">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+      </svg>
+      Voltar
+    </button>
+  </div>
+  <mat-card *ngIf="product">
+    <img
+      mat-card-image
+      [src]="'http://localhost:5050/'+product.imagem"
+      alt="{{ product.nome }}"
+    />
+    <mat-card-title>{{ product.nome }}</mat-card-title>
+    <mat-card-content>
+      <span>Categoria:</span> {{ product.categoria }}
+      <p>{{ product.descricao }}</p>
+      <strong>R$ {{ product.preco | number: '1.2-2' }}</strong>
+    </mat-card-content>
+  </mat-card>
+</div>
