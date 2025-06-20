@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Este projeto fullstack tem como objetivo fornecer uma aplicação para cadastro e listagem de produtos, utilizando:
+Este projeto fullstack de avaliacão técnica tem como objetivo fornecer uma aplicação para cadastro e listagem de produtos, utilizando:
 
 * Backend com **NestJS**
 * Banco de dados **PostgreSQL** (com suporte a Docker)
