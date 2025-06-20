@@ -136,10 +136,6 @@ Acesse: [http://localhost:4200](http://localhost:4200)
 
 ---
 
-Claro! Vamos adicionar uma seção no `README.md` explicando **como testar o endpoint de criação de produto usando o Postman**, incluindo o método, URL, tipo de body e exemplo de dados. Aqui está o trecho que você pode colar no final do README:
-
----
-
 ### 🧪 Testando o Cadastro de Produto com Postman
 
 Você pode testar o endpoint `POST /products` utilizando o **Postman** ou qualquer outra ferramenta de API.
