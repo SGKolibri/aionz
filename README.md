@@ -166,7 +166,6 @@ Você pode testar o endpoint `POST /products` utilizando o **Postman** ou qualqu
 | categoria | Periféricos               | Text |
 | imagem    | *(selecione um arquivo)*  | File |
 
-**Certifique-se de que o `Content-Type` seja `multipart/form-data`**, o Postman faz isso automaticamente ao usar o `form-data`.
 
 ---
 
