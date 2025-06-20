@@ -138,15 +138,50 @@ Acesse: [http://localhost:4200](http://localhost:4200)
 
 ---
 
+Claro! Vamos adicionar uma seção no `README.md` explicando **como testar o endpoint de criação de produto usando o Postman**, incluindo o método, URL, tipo de body e exemplo de dados. Aqui está o trecho que você pode colar no final do README:
+
+---
+
+### 🧪 Testando o Cadastro de Produto com Postman
+
+Você pode testar o endpoint `POST /products` utilizando o **Postman** ou qualquer outra ferramenta de API.
+
+#### 📮 Endpoint
+
+* **URL:** `http://localhost:5050/products`
+* **Método:** `POST`
+* **Tipo de Body:** `form-data`
+
+#### 📤 Campos esperados:
+
+| Campo     | Tipo   | Obrigatório | Observações                       |
+| --------- | ------ | ----------- | --------------------------------- |
+| nome      | string | ✅           | Nome do produto                   |
+| descricao | string | ✅           | Descrição do produto              |
+| preco     | number | ✅           | Valor numérico (ex: 199.99)       |
+| categoria | string | ✅           | Categoria do produto              |
+| imagem    | file   | ❌           | Arquivo de imagem (JPG, PNG, etc) |
+
+#### 🖼 Exemplo de requisição (form-data):
+
+| Key       | Value                     | Type |
+| --------- | ------------------------- | ---- |
+| nome      | Mouse Gamer RGB           | Text |
+| descricao | Mouse com 6 botões extras | Text |
+| preco     | 199.99                    | Text |
+| categoria | Acessórios                | Text |
+| imagem    | *(selecione um arquivo)*  | File |
+
+> ⚠️ **Certifique-se de que o `Content-Type` seja `multipart/form-data`**, o Postman faz isso automaticamente ao usar o `form-data`.
+
+---
+
 ## 📌 Implementações Extras
 
 * Componente reutilizável `ProductCard`
 * Rotas com **lazy loading**
 * **Meta tags dinâmicas** no Angular com `Title` e `Meta`
 * Estilo escuro unificado com SCSS customizado
-
----
-
 
 
 ---
