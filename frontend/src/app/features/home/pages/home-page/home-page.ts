@@ -11,6 +11,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { Router, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { ProductRegisterDialog } from '../../../../components/product-register-dialog';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-home-page',
@@ -20,10 +23,12 @@ import { Subscription } from 'rxjs';
     ProductCard,
     MatFormFieldModule,
     MatInputModule,
-    FormsModule,
     MatCardModule,
-    RouterModule,
     MatIconModule,
+    MatDialogModule,
+    MatButtonModule,
+    RouterModule,
+    FormsModule,
   ],
   templateUrl: './home-page.html',
   styleUrl: './home-page.scss',
@@ -35,12 +40,26 @@ export class HomePage implements OnInit, OnDestroy {
 
   private routerSubscription!: Subscription;
 
-  constructor(private productService: ProductService, private router: Router, private cdr: ChangeDetectorRef) {}
+  constructor(
+    private productService: ProductService,
+    private router: Router,
+    private dialog: MatDialog,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
     this.loadProducts();
     this.routerSubscription = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
+        this.loadProducts();
+      }
+    });
+  }
+
+  openRegisterDialog() {
+    const dialogRef = this.dialog.open(ProductRegisterDialog);
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
         this.loadProducts();
       }
     });
@@ -54,6 +73,7 @@ export class HomePage implements OnInit, OnDestroy {
     this.productService.getProducts().subscribe((data) => {
       this.products = data;
       this.filterProducts();
+      this.cdr.detectChanges();
     });
   }
 

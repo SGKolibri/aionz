@@ -4,5 +4,5 @@ export interface Product {
   descricao: string;
   preco: number;
   categoria: string;
-  imagem?: string; // Caminho da imagem, opcional
+  imagem?: string;
 }

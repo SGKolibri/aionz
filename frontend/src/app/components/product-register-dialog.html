@@ -1,0 +1,51 @@
+<h2 mat-dialog-title>Cadastrar Produto</h2>
+<mat-dialog-content>
+  <form>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Nome</mat-label>
+      <input matInput [(ngModel)]="product.nome" name="nome" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Descrição</mat-label>
+      <textarea
+        matInput
+        [(ngModel)]="product.descricao"
+        name="descricao"
+      ></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Preço</mat-label>
+      <input matInput type="number" [(ngModel)]="product.preco" name="preco" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Categoria</mat-label>
+      <input matInput [(ngModel)]="product.categoria" name="categoria" />
+    </mat-form-field>
+
+    <div class="image-upload full-width">
+      <label for="product-image" class="image-upload-label">
+        <span *ngIf="!product.imagem">Anexar imagem</span>
+        <img
+          *ngIf="product.imagem"
+          [src]="product.imagem"
+          alt="Preview"
+          class="image-preview"
+        />
+        <input
+          id="product-image"
+          type="file"
+          accept="image/*"
+          (change)="onImageSelected($event)"
+          hidden
+        />
+      </label>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="close()">Cancelar</button>
+  <button mat-button color="primary" (click)="register()">Cadastrar</button>
+</mat-dialog-actions>

@@ -1,0 +1,44 @@
+$text-color: #f0f0f0;
+$image-bg: #2a2a3c;
+$image-border: #2979ff;
+
+.full-width {
+  width: 100%;
+  margin: 1rem 0rem;
+}
+  
+.image-upload {
+  margin-bottom: 1rem;
+  width: 100%;
+
+  .image-upload-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $image-bg;
+    color: $text-color;
+    border: 2px dashed $image-border;
+    border-radius: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+    transition: border-color 0.2s;
+
+    &:hover {
+      border-color: lighten($image-border, 10%);
+    }
+
+    span {
+      font-size: 1rem;
+      color: $text-color;
+    }
+
+    .image-preview {
+      max-width: 120px;
+      max-height: 120px;
+      border-radius: 0.5rem;
+      object-fit: cover;
+      border: 1px solid $image-border;
+      background: $image-bg;
+    }
+  }
+}
