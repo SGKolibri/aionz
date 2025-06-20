@@ -1,6 +1,4 @@
-# Avaliação Técnica Aionz - AngularJS + NestJS
-
-# Projeto NestJS + Angular - Cadastro e Listagem de Produtos
+# Avaliação Técnica Projeto NestJS + Angular - Cadastro e Listagem de Produtos
 
 ## ✨ Objetivo
 
