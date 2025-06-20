@@ -160,7 +160,7 @@ Você pode testar o endpoint `POST /products` utilizando o **Postman** ou qualqu
 
 | Key       | Value                     | Type |
 | --------- | ------------------------- | ---- |
-| nome      | Mouse Gamer RGB           | Text |
+| nome      | Logitech G305             | Text |
 | descricao | Mouse com 6 botões extras | Text |
 | preco     | 199.99                    | Text |
 | categoria | Acessórios                | Text |
