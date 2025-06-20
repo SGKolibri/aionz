@@ -115,14 +115,14 @@ As imagens serão salvas por padrão em uma pasta `uploads/`.
 
 ---
 
-### ♻ Frontend (Angular)
+### Frontend (Angular)
 
 #### 1. Instale as dependências e rode o projeto
 
 ```bash
 cd frontend
 npm install
-npm start
+ng serve
 ```
 
 Acesse: [http://localhost:4200](http://localhost:4200)
