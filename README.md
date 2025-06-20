@@ -162,8 +162,8 @@ Você pode testar o endpoint `POST /products` utilizando o **Postman** ou qualqu
 | --------- | ------------------------- | ---- |
 | nome      | Logitech G305             | Text |
 | descricao | Mouse com 6 botões extras | Text |
-| preco     | 199.99                    | Text |
-| categoria | Acessórios                | Text |
+| preco     | 249.99                    | Text |
+| categoria | Periféricos               | Text |
 | imagem    | *(selecione um arquivo)*  | File |
 
 > ⚠️ **Certifique-se de que o `Content-Type` seja `multipart/form-data`**, o Postman faz isso automaticamente ao usar o `form-data`.
