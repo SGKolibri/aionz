@@ -182,8 +182,8 @@ Você pode testar o endpoint `POST /products` utilizando o **Postman** ou qualqu
 ## Requisitos
 
 * Node.js v18+
-* Docker (opcional para banco de dados)
-* Angular CLI e NestJS CLI instalados globalmente (recomendado):
+* Docker
+* Angular CLI e NestJS CLI instalados globalmente:
 
 ```bash
 npm i -g @nestjs/cli @angular/cli
