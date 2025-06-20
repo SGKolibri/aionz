@@ -1,22 +1,18 @@
-import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { Product } from "../models/product.model";
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Product } from '../models/product.model';
 
-@Injectable({ providedIn: "root" })
+@Injectable({ providedIn: 'root' })
 export class ProductService {
-    private apiUrl = "http://localhost:5050/api/products";
+  private apiUrl = 'http://localhost:5050/api/products';
 
-    constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
-    getProducts() {
-        return this.http.get<Product[]>(this.apiUrl);
-    }
+  getProducts() {
+    return this.http.get<Product[]>(this.apiUrl);
+  }
 
-    getProductById(id: number) {
-        return this.http.get<Product>(`${this.apiUrl}/${id}`);
-    }
-
-    createProduct(product: Product) {
-        return this.http.post<Product>(this.apiUrl, product);
-    }
+  getProductById(id: number) {
+    return this.http.get<Product>(`${this.apiUrl}/${id}`);
+  }
 }

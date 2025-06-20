@@ -16,12 +16,17 @@ import { diskStorage } from 'multer';
 import { extname } from 'path';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
+import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Products')
 @Controller('products')
 export class ProductsController {
   constructor(private readonly productService: ProductsService) {}
 
   @Post()
+  @ApiOperation({ summary: 'Registrar um novo produto', description: 'Registrar um novo produto com os dados fornecidos.' })
+  @ApiResponse({ status: 201, description: 'Produto criado com sucesso.' })
+  @ApiResponse({ status: 400, description: 'Dados inválidos.' })
   @UseInterceptors(
     FileInterceptor('imagem', {
       storage: diskStorage({
@@ -47,16 +52,26 @@ export class ProductsController {
   }
 
   @Get()
+  @ApiOperation({ summary: 'Listar todos os produtos', description: 'Retorna uma lista de todos os produtos cadastrados.' })
+  @ApiResponse({ status: 200, description: 'Lista de produtos retornada com sucesso.' })
+  @ApiResponse({ status: 404, description: 'Nenhum produto encontrado.' })
   async getAllProducts() {
     return this.productService.findAll();
   }
 
+  
   @Get(':id')
+  @ApiOperation({ summary: 'Buscar produto por ID', description: 'Retorna os detalhes de um produto específico pelo seu ID.' })
+  @ApiResponse({ status: 200, description: 'Produto encontrado com sucesso.' })
+  @ApiResponse({ status: 404, description: 'Produto não encontrado.' })
   async getProductById(@Param('id') id: number) {
     return this.productService.findOne(id);
   }
 
   @Delete(':id')
+  @ApiOperation({ summary: 'Deletar produto por ID', description: 'Remove um produto específico pelo seu ID.' })
+  @ApiResponse({ status: 200, description: 'Produto removido com sucesso.' })
+  @ApiResponse({ status: 404, description: 'Produto não encontrado.' })
   async deleteProduct(@Param('id') id: number) {
     const product = await this.productService.findOne(id);
     if (!product) {
@@ -67,6 +82,10 @@ export class ProductsController {
   }
 
   @Patch (':id')
+  @ApiOperation({ summary: 'Atualizar produto por ID', description: 'Atualiza os dados de um produto específico pelo seu ID.' })
+  @ApiResponse({ status: 200, description: 'Produto atualizado com sucesso.' })
+  @ApiResponse({ status: 404, description: 'Produto não encontrado.' })
+  @ApiResponse({ status: 400, description: 'Dados inválidos.' })
   @UseInterceptors(
     FileInterceptor('imagem', {
       storage: diskStorage({

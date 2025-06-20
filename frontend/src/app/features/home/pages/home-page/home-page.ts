@@ -12,8 +12,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { Router, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { ProductRegisterDialog } from '../../../../components/product-register-dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home-page',
@@ -42,24 +42,17 @@ export class HomePage implements OnInit, OnDestroy {
 
   constructor(
     private productService: ProductService,
+    private title: Title,
     private router: Router,
     private dialog: MatDialog,
     private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
+    this.title.setTitle('Home - Lista de Produtos');
     this.loadProducts();
     this.routerSubscription = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        this.loadProducts();
-      }
-    });
-  }
-
-  openRegisterDialog() {
-    const dialogRef = this.dialog.open(ProductRegisterDialog);
-    dialogRef.afterClosed().subscribe((result) => {
-      if (result) {
         this.loadProducts();
       }
     });

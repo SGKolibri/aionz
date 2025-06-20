@@ -10,17 +10,7 @@ $blue: #2979ff;
   align-items: center;
   background-color: $bg-dark;
   color: $text-color;
-}
-
-.search-bar-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-width: 540px;
-  margin: 2rem auto;
-  background-color: $bg-dark;
-  gap: 1rem;
+  padding-top: 2rem;
 }
 
 .custom-search-bar {
@@ -33,6 +23,7 @@ $blue: #2979ff;
   border-radius: 9999px;
   padding: 0.25rem 1rem;
   box-shadow: 0 2px 8px rgba(41, 121, 255, 0.05);
+
 
   input {
     flex: 1;
@@ -48,39 +39,11 @@ $blue: #2979ff;
     }
   }
 
-  button {
-    background: none;
-    border: none;
-    color: $blue;
-    cursor: pointer;
-    padding: 0.5rem;
-
-    svg {
-      vertical-align: middle;
-    }
+  @media (max-width: 600px) {
+    max-width: 85vw;
+    padding: 0.25rem 0.5rem;
   }
 }
-
-.fab-add-button {
-  background-color: #1e1e2f; // fundo dark
-  border: 2px solid #2979ff;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  svg {
-    width: 20px;
-    height: 20px;
-  }
-
-  &:hover {
-    background-color: #252538;
-  }
-}
-
 
 .products-list {
   display: grid;
