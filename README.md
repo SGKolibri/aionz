@@ -1,8 +1,8 @@
 # Avaliação Técnica NestJS + Angular - Cadastro e Listagem de Produtos
 
-## ✨ Objetivo
+## Objetivo
 
-Este projeto fullstack tem como objetivo fornecer uma aplicação completa para cadastro e listagem de produtos, utilizando:
+Este projeto fullstack tem como objetivo fornecer uma aplicação para cadastro e listagem de produtos, utilizando:
 
 * Backend com **NestJS**
 * Banco de dados **PostgreSQL** (com suporte a Docker)
@@ -12,7 +12,7 @@ Este projeto fullstack tem como objetivo fornecer uma aplicação completa para 
 
 ---
 
-## 📊 Funcionalidades
+## Funcionalidades
 
 ### API Backend
 
@@ -37,9 +37,9 @@ Este projeto fullstack tem como objetivo fornecer uma aplicação completa para 
 
 ---
 
-## 🚀 Instruções de Execução
+## Instruções de Execução
 
-### ♰ Backend (NestJS)
+### Backend (NestJS)
 
 #### 1. Configuração do ambiente
 
@@ -136,27 +136,27 @@ Acesse: [http://localhost:4200](http://localhost:4200)
 
 ---
 
-### 🧪 Testando o Cadastro de Produto com Postman
+### Testando o Cadastro de Produto com Postman
 
 Você pode testar o endpoint `POST /products` utilizando o **Postman** ou qualquer outra ferramenta de API.
 
-#### 📮 Endpoint
+#### Endpoint
 
 * **URL:** `http://localhost:5050/products`
 * **Método:** `POST`
 * **Tipo de Body:** `form-data`
 
-#### 📤 Campos esperados:
+#### Campos esperados:
 
 | Campo     | Tipo   | Obrigatório | Observações                       |
 | --------- | ------ | ----------- | --------------------------------- |
-| nome      | string | ✅           | Nome do produto                   |
-| descricao | string | ✅           | Descrição do produto              |
-| preco     | number | ✅           | Valor numérico (ex: 199.99)       |
-| categoria | string | ✅           | Categoria do produto              |
-| imagem    | file   | ❌           | Arquivo de imagem (JPG, PNG, etc) |
+| nome      | string | Sim           | Nome do produto                   |
+| descricao | string | Sim           | Descrição do produto              |
+| preco     | number | Sim           | Valor numérico (ex: 199.99)       |
+| categoria | string | Sim           | Categoria do produto              |
+| imagem    | file   | Não           | Arquivo de imagem (JPG, PNG, etc) |
 
-#### 🖼 Exemplo de requisição (form-data):
+#### Exemplo de requisição (form-data):
 
 | Key       | Value                     | Type |
 | --------- | ------------------------- | ---- |
@@ -166,11 +166,11 @@ Você pode testar o endpoint `POST /products` utilizando o **Postman** ou qualqu
 | categoria | Periféricos               | Text |
 | imagem    | *(selecione um arquivo)*  | File |
 
-> ⚠️ **Certifique-se de que o `Content-Type` seja `multipart/form-data`**, o Postman faz isso automaticamente ao usar o `form-data`.
+> **Certifique-se de que o `Content-Type` seja `multipart/form-data`**, o Postman faz isso automaticamente ao usar o `form-data`.
 
 ---
 
-## 📌 Implementações Extras
+## Implementações Extras
 
 * Componente reutilizável `ProductCard`
 * Rotas com **lazy loading**
