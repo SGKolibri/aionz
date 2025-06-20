@@ -1,4 +1,4 @@
-# Avaliação Técnica Projeto NestJS + Angular - Cadastro e Listagem de Produtos
+# Avaliação Técnica NestJS + Angular - Cadastro e Listagem de Produtos
 
 ## ✨ Objetivo
 
